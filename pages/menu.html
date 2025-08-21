@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Delivery - Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f8f8f8; }
+        nav {
+            background: #ff6347;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        .menu-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .menu-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .menu-item {
+            background: #fafafa;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            padding: 1rem;
+            text-align: center;
+            transition: box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        .menu-item img {
+            width: 100%;
+            max-width: 160px;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            object-fit: cover;
+            height: 120px;
+        }
+        .item-name {
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+        .item-desc {
+            font-size: 0.97rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            min-height: 40px;
+        }
+        .item-price {
+            color: #ff6347;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+        .order-btn {
+            background: #ff6347;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .order-btn:hover {
+            background: #e5533d;
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div><strong>FoodExpress</strong></div>
+        <div>
+            <a href="/index.html">Home</a>
+            <a href="./menu.html">Menu</a>
+            <a href="cart.html">Cart</a>
+            <a href="./contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="menu-container">
+        <div class="menu-title">Our Menu</div>
+        <div class="menu-grid">
+            <!-- Menu Item 1 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Margherita Pizza">
+                <div class="item-name">Margherita Pizza</div>
+                <div class="item-desc">Classic pizza with tomato sauce, mozzarella, and basil.</div>
+                <div class="item-price">$9.99</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <!-- Menu Item 2 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Cheese Burger">
+                <div class="item-name">Cheese Burger</div>
+                <div class="item-desc">Juicy beef patty, cheddar cheese, lettuce, and tomato.</div>
+                <div class="item-price">$7.49</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <!-- Menu Item 3 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1464306076886-debede6bbf09?auto=format&fit=crop&w=400&q=80" alt="Spaghetti Carbonara">
+                <div class="item-name">Spaghetti Carbonara</div>
+                <div class="item-desc">Creamy pasta with bacon, parmesan, and black pepper.</div>
+                <div class="item-price">$8.99</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <!-- Menu Item 4 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Greek Salad">
+                <div class="item-name">Greek Salad</div>
+                <div class="item-desc">Fresh veggies, feta cheese, olives, and olive oil.</div>
+                <div class="item-price">$6.99</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <!-- Menu Item 5 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1516685018646-5499d0a7d6b2?auto=format&fit=crop&w=400&q=80" alt="Sushi Platter">
+                <div class="item-name">Sushi Platter</div>
+                <div class="item-desc">Assorted sushi rolls with fresh fish and veggies.</div>
+                <div class="item-price">$12.99</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <!-- Menu Item 6 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=400&q=80" alt="Chicken Tacos">
+                <div class="item-name">Chicken Tacos</div>
+                <div class="item-desc">Soft tortillas filled with spicy chicken and salsa.</div>
+                <div class="item-price">$7.99</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <!-- Menu Item 7 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Pepperoni Pizza">
+                <div class="item-name">Pepperoni Pizza</div>
+                <div class="item-desc">Loaded with pepperoni, mozzarella, and tomato sauce.</div>
+                <div class="item-price">$10.99</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <!-- Menu Item 8 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Veggie Burger">
+                <div class="item-name">Veggie Burger</div>
+                <div class="item-desc">Grilled veggie patty, lettuce, tomato, and vegan mayo.</div>
+                <div class="item-price">$6.99</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <!-- Menu Item 9 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="BBQ Chicken Pizza">
+                <div class="item-name">BBQ Chicken Pizza</div>
+                <div class="item-desc">Tangy BBQ sauce, grilled chicken, onions, and cheese.</div>
+                <div class="item-price">$11.49</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <!-- Menu Item 10 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1516685018646-5499d0a7d6b2?auto=format&fit=crop&w=400&q=80" alt="Tempura Sushi">
+                <div class="item-name">Tempura Sushi</div>
+                <div class="item-desc">Crispy tempura rolls with shrimp and veggies.</div>
+                <div class="item-price">$13.49</div>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 FoodExpress. All rights reserved. | Designed by FoodExpress Team
+    </footer>
+</body>
+</html>

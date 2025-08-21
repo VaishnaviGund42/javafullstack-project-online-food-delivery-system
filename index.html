@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Food Delivery System</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #f8f8f8;
+        }
+        header {
+            background: #ff5722;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #ffd54f;
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+        }
+        .hero button {
+            background: #ffd54f;
+            color: #ff5722;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .hero button:hover {
+            background: #fff176;
+        }
+        .section {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .food-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .food-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            width: 260px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .food-card:hover {
+            transform: translateY(-5px) scale(1.03);
+        }
+        .food-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .food-card .info {
+            padding: 18px;
+        }
+        .food-card .info h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.2em;
+            color: #ff5722;
+        }
+        .food-card .info p {
+            margin: 0 0 12px 0;
+            color: #666;
+            font-size: 0.98em;
+        }
+        .food-card .info .price {
+            font-weight: bold;
+            color: #388e3c;
+            font-size: 1.1em;
+        }
+        .food-card .info button {
+            background: #ff5722;
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.98em;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .food-card .info button:hover {
+            background: #e64a19;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 700px) {
+            .food-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>FoodExpress</h2>
+        <nav>
+            <a href="./index.html">Home</a>
+            <a href="./pages/menu.html">Menu</a>
+            <a href="./pages/order.html">Order</a>
+            <a href="./pages/contact.html">Contact</a>
+            <a href="./pages/login.html">Login</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Delicious Food Delivered Fast</h1>
+        <p>Order your favorite meals from top restaurants and get them delivered to your doorstep.</p>
+        <button onclick="scrollToMenu()">Order Now</button>
+    </section>
+    <section class="section" id="menu">
+        <h2 style="text-align:center; color:#ff5722; margin-bottom:30px;">Popular Dishes</h2>
+        <div class="food-list">
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Pizza">
+                <div class="info">
+                    <h3>Cheese Burst Pizza</h3>
+                    <p>Loaded with extra cheese and fresh veggies.</p>
+                    <div class="price">$12.99</div>
+                    <button onclick="addToCart('Cheese Burst Pizza')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Burger">
+                <div class="info">
+                    <h3>Classic Veg Burger</h3>
+                    <p>Juicy patty with fresh lettuce and sauces.</p>
+                    <div class="price">$8.49</div>
+                    <button onclick="addToCart('Classic Veg Burger')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1464306076886-debede6bbf09?auto=format&fit=crop&w=400&q=80" alt="Pasta">
+                <div class="info">
+                    <h3>Italian Pasta</h3>
+                    <p>Creamy Alfredo sauce with penne pasta.</p>
+                    <div class="price">$10.99</div>
+                    <button onclick="addToCart('Italian Pasta')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1505250463726-0d238b6a9cfa?auto=format&fit=crop&w=400&q=80" alt="Salad">
+                <div class="info">
+                    <h3>Fresh Green Salad</h3>
+                    <p>Healthy mix of greens, veggies, and nuts.</p>
+                    <div class="price">$7.99</div>
+                    <button onclick="addToCart('Fresh Green Salad')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        &copy; 2024 FoodExpress. All rights reserved.
+    </footer>
+    <script>
+        function scrollToMenu() {
+            document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+        }
+        function addToCart(item) {
+            alert(item + " added to cart!");
+        }
+    </script>
+</body>
+</html>
